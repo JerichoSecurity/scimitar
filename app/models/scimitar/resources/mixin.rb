@@ -796,19 +796,19 @@ module Scimitar
 
                   elsif mapped_array_entry.key?(:list) # Dynamic mapping of each complex list item
                     attribute = resource_class.find_attribute(*path)
-                    method    = "#{mapped_array_entry[:list]}="
+                    method    = "#{mapped_array_entry[:list]}_custom="
 
                     if (attribute&.mutability == 'readWrite' || attribute&.mutability == 'writeOnly') && self.respond_to?(method)
                       find_with_proc = mapped_array_entry[:find_with]
 
                       unless find_with_proc.nil?
-                        mapped_list = (scim_hash_or_leaf_value || []).map do | source_list_entry |
-                          find_with_proc.call(source_list_entry)
-                        end
+                        # mapped_list = (scim_hash_or_leaf_value || []).map do | source_list_entry |
+                        #   find_with_proc.call(source_list_entry)
+                        # end
 
                         mapped_list.compact!
 
-                        self.public_send(method, mapped_list)
+                        self.public_send(method, scim_hash_or_leaf_value)
                       end
                     end
                   end # "elsif mapped_array_entry.key?(:list)"
