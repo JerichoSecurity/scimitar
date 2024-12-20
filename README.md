@@ -4,10 +4,9 @@
 [![Build Status](https://app.travis-ci.com/RIPAGlobal/scimitar.svg?branch=main)](https://app.travis-ci.com/RIPAGlobal/scimitar)
 [![License](https://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
 
-A SCIM v2 API endpoint implementation for Ruby On Rails.
+A SCIM v2 API endpoint implementation for Ruby On Rails (7.0 and 8.0).
 
 For a list of changes and information on major version upgrades, please see `CHANGELOG.md`.
-
 
 
 ## Overview
