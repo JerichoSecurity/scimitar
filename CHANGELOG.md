@@ -1,3 +1,10 @@
+# 2.11.0 (Unreleased)
+
+Features:
+
+* Add support for Rails 8.0 while maintaining Rails 7.0 compatibility
+* Update gemspec to allow Rails versions between 7.0 and 9.0
+
 # 2.10.0 (2024-10-22)
 
 Features:
