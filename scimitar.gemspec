@@ -22,7 +22,12 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.7.0'
 
-  s.add_dependency 'rails', '~> 7.0'
+  if ENV['RAILS_VERSION']&.start_with?('8')
+    s.required_ruby_version = '>= 3.2.0'
+    s.add_dependency 'rails', '~> 8.0'
+  else
+    s.add_dependency 'rails', '~> 7.0'
+  end
 
   s.add_development_dependency 'debug',          '~>  1.9'
   s.add_development_dependency 'rake',           '~> 13.2'
